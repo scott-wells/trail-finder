@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TrailItem from "./TrailItem";
 
 const Trails = ({ trails }) => {
@@ -13,17 +12,13 @@ const Trails = ({ trails }) => {
   );
 };
 
-TrailItem.propTypes = {
-  trail: PropTypes.object.isRequired,
-};
-
 TrailItem.defaultValue = {
   trail: {},
 };
 
 const trailStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "repeat(1, 1fr)",
   gridGap: "1rem",
 };
 

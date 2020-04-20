@@ -18,6 +18,17 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+//
+// COMPONENT STYLES
+//
 .App {
   background: $greylighter;
   height: 100vh;
@@ -31,13 +42,14 @@ body {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
-  border-bottom: 1px solid $greylight;
+  border-bottom: 1px solid #a9b4c5;
   display: flex;
   align-items: center;
   h1 {
     margin-left: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
+    cursor: pointer;
     i {
       font-size: 1.5rem;
       padding-right: 0.3rem;
@@ -71,6 +83,51 @@ body {
   background: $greylighter;
 }
 
+.cardWrap {
+  .card {
+    background: white;
+    -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 1rem 0;
+    padding: 1rem;
+    // overflow: hidden;
+    width: 100%;
+    .cardImg {
+      height: 110px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .cardContent {
+      padding: 1rem 0;
+      display: grid;
+      row-gap: 0.5rem;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          font-size: 0.8rem;
+        }
+      }
+      .tag {
+        color: $greylight;
+        background: $greylighter;
+        padding: 0.25rem 0.5rem;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 20px;
+        cursor: pointer;
+        -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
 .map {
   height: 100%;
   background: $greylight;
@@ -82,11 +139,15 @@ body {
   color: white;
 }
 
+//
+// ELEMENT STYLES
+//
 .buttonPill {
   font-family: "Rubik", sans-serif;
+  font-weight: 500;
   color: $blueaccent;
   background: none;
-  border: 1px solid $blueaccent;
+  border: 1.3px solid $blueaccent;
   padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;

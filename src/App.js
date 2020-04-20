@@ -35,6 +35,35 @@ class App extends Component {
         <div className='mainContent'>
           <div className='sidebar'>
             <Search searchTrails={this.searchTrails} />
+            <div className='cardWrap'>
+              <div className='card'>
+                <div className='cardImg'>
+                  <img
+                    src='https://images.unsplash.com/photo-1561999270-c1ae85826fc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80'
+                    alt='trail 1'
+                  />
+                </div>
+                <div className='cardContent'>
+                  <h4>Trail Name</h4>
+                  <div>
+                    <span>Length: 7 mi.</span>
+                    <span>
+                      <i className='fas fa-star' />
+                      <i className='fas fa-star' />
+                      <i className='fas fa-star' />
+                      <i className='fas fa-star' />
+                    </span>
+                  </div>
+                  <div>
+                    <span className='tag'>tag</span>
+                    <span className='tag'>tag</span>
+                    <span className='tag'>tag</span>
+                    <span className='tag'>tag</span>
+                    <span className='tag'>tag</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* <Trails trails={this.state.trails} /> */}
           </div>
 

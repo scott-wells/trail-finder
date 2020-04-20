@@ -30,13 +30,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className='outerWrap'>
-        <div className='App'>
-          <Navbar />
-          <div className='container'>
+      <div className='App'>
+        <Navbar />
+        <div className='mainContent'>
+          <div className='sidebar'>
             <Search searchTrails={this.searchTrails} />
-            <Trails trails={this.state.trails} />
+            {/* <Trails trails={this.state.trails} /> */}
           </div>
+
+          <div className='map'>MAP</div>
         </div>
       </div>
     );

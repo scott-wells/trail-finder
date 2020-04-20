@@ -11,7 +11,7 @@ const Navbar = ({ icon, title }) => {
         <li>Map</li>
         <li>Trails</li>
         <li>
-          <button>Sign In</button>
+          <button className='buttonPill'>Sign In</button>
         </li>
       </ul>
     </nav>

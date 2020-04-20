@@ -22,18 +22,14 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit} className='form'>
+        <form onSubmit={this.onSubmit}>
           <input
             type='text'
             name='search'
-            placeholder='Search here'
+            className='formPill'
+            placeholder='Search...'
             value={this.state.text}
             onChange={this.onChange}
-          />
-          <input
-            type='submit'
-            value='Find'
-            className='btn btn-dark btn-block'
           />
         </form>
       </div>

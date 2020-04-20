@@ -3,16 +3,23 @@ import PropTypes from "prop-types";
 
 const Navbar = ({ icon, title }) => {
   return (
-    <nav className='navbar bg-light'>
+    <nav className='navBar'>
       <h1>
         <i className={icon} /> {title}
       </h1>
+      <ul>
+        <li>Map</li>
+        <li>Trails</li>
+        <li>
+          <button>Sign In</button>
+        </li>
+      </ul>
     </nav>
   );
 };
 
 Navbar.defaultProps = {
-  title: "Trail Finder",
+  title: "trail finder",
   icon: "fas fa-hiking",
 };
 

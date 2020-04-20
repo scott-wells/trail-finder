@@ -10,7 +10,7 @@ class TrailItem extends Component {
     if (!imgSqSmall) {
       return (
         <div className='card text-center'>
-          <i className={icon} style={{ fontSize: "1.5rem" }} />
+          <i className={icon} style={{ fontSize: "3rem" }} />
           <h4>{name}</h4>
           <div>
             <p style={{ fontSize: ".8rem" }}>Length: {length}mi.</p>

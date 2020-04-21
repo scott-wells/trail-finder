@@ -3,38 +3,34 @@ import Stars from "./Stars";
 
 class TrailItem extends Component {
   render() {
-    const { name, imgSqSmall, length, stars } = this.props.trail;
-    const icon = this.props.icon;
-
-    // if the api does not return an imgSqSmall, show the icon instead
-    if (!imgSqSmall) {
-      return (
-        <div className='card text-center'>
-          <i className={icon} style={{ fontSize: "3rem" }} />
-          <h4>{name}</h4>
-          <div>
-            <p style={{ fontSize: ".8rem" }}>Length: {length}mi.</p>
-            <Stars stars={stars} />
-          </div>
-        </div>
-      );
-    }
+    const { name, imgMedium, length, stars } = this.props.trail;
 
     return (
-      <div className='card text-center'>
-        <img src={imgSqSmall} style={{ width: "25%" }} />
-        <h4>{name}</h4>
-        <div>
-          <p style={{ fontSize: ".8rem" }}>Length: {length}mi.</p>
-          <Stars stars={stars} />
+      <div className='cardWrap'>
+        <div className='card'>
+          <div className='cardImg'>
+            {!imgMedium ? <img src='./hiking.png' /> : <img src={imgMedium} />}
+          </div>
+          <div className='cardContent'>
+            <h4>{name}</h4>
+            <div>
+              <span>Length: {length} mi.</span>
+              <span>
+                <Stars stars={stars} />
+              </span>
+            </div>
+            <div className='tag'>
+              <span>#tag</span>
+              <span>#tag</span>
+              <span>#tag</span>
+              <span>#tag</span>
+              <span>#tag</span>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
-
-TrailItem.defaultProps = {
-  icon: "fas fa-hiking",
-};
 
 export default TrailItem;

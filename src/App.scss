@@ -82,7 +82,8 @@ h6 {
 }
 
 .sidebar {
-  height: 100%;
+  height: 100vh;
+  overflow: scroll;
   text-align: left;
   padding: 1rem;
   background: $greylighter;
@@ -141,15 +142,21 @@ h6 {
   }
 }
 
+// #map {
+//   //   position: absolute;
+//   //   top: 0;
+//   //   bottom: 0;
+//   text-align: right;
+//   width: 100%;
+//   height: 100%;
+// }
 .map {
-  height: 100%;
-  background: $greylight;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: xx-large;
-  font-weight: 700;
-  color: white;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 //

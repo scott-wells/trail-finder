@@ -8,41 +8,41 @@ class Stars extends Component {
     if (stars >= 4.5) {
       return (
         <Fragment>
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
         </Fragment>
       );
     } else if (stars < 4.5 && stars >= 3.5) {
       return (
         <Fragment>
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
         </Fragment>
       );
     } else if (stars < 3.5 && stars >= 2.5) {
       return (
         <Fragment>
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
+          <i className={icon} />
+          <i className={icon} />
+          <i className={icon} />
         </Fragment>
       );
     } else if (stars < 2.5 && stars >= 1.5) {
       return (
         <Fragment>
-          <i className={icon} style={starsStyle} />
-          <i className={icon} style={starsStyle} />
+          <i className={icon} />
+          <i className={icon} />
         </Fragment>
       );
     } else {
       return (
         <Fragment>
-          <i className={icon} style={starsStyle} />
+          <i className={icon} />
         </Fragment>
       );
     }
@@ -51,10 +51,6 @@ class Stars extends Component {
 
 Stars.defaultProps = {
   icon: "fas fa-star",
-};
-
-const starsStyle = {
-  fontSize: ".6rem",
 };
 
 export default Stars;

@@ -12,12 +12,12 @@ class App extends Component {
   };
 
   // Searches trails near Albuquerque
-  searchTrails = async (text) => {
-    const res = await axios.get(
-      `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=30&maxResults=30&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
-    );
-    this.setState({ trails: res.data.trails });
-  };
+  // searchTrails = async (text) => {
+  //   const res = await axios.get(
+  //     `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=30&maxResults=30&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
+  //   );
+  //   this.setState({ trails: res.data.trails });
+  // };
 
   // loads all trails near Albuquerque within 30 miles
   async componentDidMount() {
@@ -54,12 +54,12 @@ class App extends Component {
                       <i className='fas fa-star' />
                     </span>
                   </div>
-                  <div>
-                    <span className='tag'>tag</span>
-                    <span className='tag'>tag</span>
-                    <span className='tag'>tag</span>
-                    <span className='tag'>tag</span>
-                    <span className='tag'>tag</span>
+                  <div className='tag'>
+                    <span>#tag</span>
+                    <span>#tag</span>
+                    <span>#tag</span>
+                    <span>#tag</span>
+                    <span>#tag</span>
                   </div>
                 </div>
               </div>

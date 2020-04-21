@@ -73,7 +73,7 @@ h6 {
 }
 
 .mainContent {
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 100vw;
   display: grid;
   grid-gap: 0px;
@@ -82,7 +82,6 @@ h6 {
 }
 
 .sidebar {
-  height: 100vh;
   overflow: scroll;
   text-align: left;
   padding: 1rem;
@@ -101,6 +100,7 @@ h6 {
     width: 100%;
     .cardImg {
       height: 110px;
+      padding-bottom: 1rem;
       img {
         width: 100%;
         height: 100%;
@@ -108,7 +108,7 @@ h6 {
       }
     }
     .cardContent {
-      padding-top: 1rem;
+      height: 100%;
       display: grid;
       row-gap: 0.5rem;
       div {
@@ -142,23 +142,6 @@ h6 {
   }
 }
 
-// #map {
-//   //   position: absolute;
-//   //   top: 0;
-//   //   bottom: 0;
-//   text-align: right;
-//   width: 100%;
-//   height: 100%;
-// }
-.map {
-  height: 100vh;
-  position: relative;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
 //
 // ELEMENT STYLES
 //
@@ -185,4 +168,17 @@ h6 {
   border: none;
   -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.map {
+  .fa-map-marker {
+    color: $greenaccentdark;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .mapboxgl-popup-close-button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+  }
 }

@@ -9,7 +9,11 @@ class TrailItem extends Component {
       <div className='cardWrap'>
         <div className='card'>
           <div className='cardImg'>
-            {!imgMedium ? <img src='./hiking.png' /> : <img src={imgMedium} />}
+            {!imgMedium ? (
+              <img src='./hiking.png' alt='' />
+            ) : (
+              <img src={imgMedium} />
+            )}
           </div>
           <div className='cardContent'>
             <h4>{name}</h4>

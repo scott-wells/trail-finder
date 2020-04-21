@@ -30,7 +30,7 @@ class App extends Component {
             <Search />
             <Trails trails={this.state.trails} />
           </div>
-          <Map />
+          <Map trails={this.state.trails} />
         </div>
       </div>
     );

@@ -1,40 +1,40 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
-import axios from "axios";
 
 import Trails from "./components/trails/Trails";
 import Navbar from "./components/layout/Navbar";
 import Search from "./components/layout/Search";
 import Map from "./components/layout/Map";
 
-class App extends Component {
-  state = {
-    trails: {},
-  };
+function App() {
+  const [trails, setTrails] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // loads all trails near Albuquerque within 30 miles
-  async componentDidMount() {
-    const res = await axios.get(
+  useEffect(() => {
+    fetch(
       `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=200&maxResults=100&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
-    );
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.trails);
+        setTrails(data.trails);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-    this.setState({ trails: res.data.trails });
-  }
-
-  render() {
-    return (
-      <div className='App'>
-        <Navbar />
-        <div className='mainContent'>
-          <div className='sidebar'>
-            <Search />
-            <Trails trails={this.state.trails} />
-          </div>
-          <Map trails={this.state.trails} />
+  return (
+    <div className='App'>
+      <Navbar />
+      <div className='mainContent'>
+        <div className='sidebar'>
+          <Search searchText={(text) => setSearchTerm(text)} />
+          <Trails trails={trails} />
         </div>
+        <Map trails={trails} />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

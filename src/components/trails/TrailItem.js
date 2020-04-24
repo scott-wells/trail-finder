@@ -10,9 +10,9 @@ class TrailItem extends Component {
         <div className='card'>
           <div className='cardImg'>
             {!imgMedium ? (
-              <img src='./hiking.png' alt='' />
+              <i className='fas fa-hiking' />
             ) : (
-              <img src={imgMedium} />
+              <img src={imgMedium} alt={name} />
             )}
           </div>
           <div className='cardContent'>
@@ -22,13 +22,6 @@ class TrailItem extends Component {
               <span>
                 <Stars stars={stars} />
               </span>
-            </div>
-            <div className='tag'>
-              <span>#tag</span>
-              <span>#tag</span>
-              <span>#tag</span>
-              <span>#tag</span>
-              <span>#tag</span>
             </div>
           </div>
         </div>

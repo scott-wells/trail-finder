@@ -49,6 +49,16 @@ const Map = ({ trails }) => {
           >
             <div className='cardWrap'>
               <div className='card'>
+                <div className='cardImg'>
+                  {!selectedTrail.imgMedium ? (
+                    <i className='fas fa-hiking' />
+                  ) : (
+                    <img
+                      src={selectedTrail.imgMedium}
+                      alt={selectedTrail.name}
+                    />
+                  )}
+                </div>
                 <div className='cardContent'>
                   <h4>{selectedTrail.name}</h4>
                   <div>
@@ -56,13 +66,6 @@ const Map = ({ trails }) => {
                     <span>
                       <Stars stars={selectedTrail.stars} />
                     </span>
-                  </div>
-                  <div className='tag'>
-                    <span>#tag</span>
-                    <span>#tag</span>
-                    <span>#tag</span>
-                    <span>#tag</span>
-                    <span>#tag</span>
                   </div>
                 </div>
               </div>

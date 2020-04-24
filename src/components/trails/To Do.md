@@ -1,3 +1,7 @@
-## 2. Refactor with useState hook
+## Refactor with useState hook
 
-## 3. Make the search function work
+- Refactor TrailItem
+- Refactor Search
+- RefactorApp
+
+## Make the search function work

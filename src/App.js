@@ -15,7 +15,7 @@ class App extends Component {
   // loads all trails near Albuquerque within 30 miles
   async componentDidMount() {
     const res = await axios.get(
-      `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=30&maxResults=30&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
+      `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=200&maxResults=100&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
     );
 
     this.setState({ trails: res.data.trails });

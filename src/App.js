@@ -8,16 +8,14 @@ import Map from "./components/layout/Map";
 
 function App() {
   const [trails, setTrails] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
 
+  // Return 100 trails within 200 miles of Albuquerque, NM
   useEffect(() => {
     fetch(
       `https://www.hikingproject.com/data/get-trails?lat=35.0844&lon=-106.6504&maxDistance=200&maxResults=100&key=${process.env.REACT_APP_HIKING_PROJECT_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.trails);
         setTrails(data.trails);
       })
       .catch((err) => console.log(err));
@@ -28,7 +26,7 @@ function App() {
       <Navbar />
       <div className='mainContent'>
         <div className='sidebar'>
-          <Search searchText={(text) => setSearchTerm(text)} />
+          <Search trails={trails} />
           <Trails trails={trails} />
         </div>
         <Map trails={trails} />

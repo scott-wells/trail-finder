@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [trails, setTrails] = useState({});
+  const [filteredTrails, setFilteredTrails] = useState({});
 
   // Return 100 trails within 200 miles of Albuquerque, NM
   useEffect(() => {
@@ -19,16 +20,18 @@ function App() {
       .then((data) => {
         console.log(data.trails);
         setTrails(data.trails);
+        setFilteredTrails(data.trails);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  // const searchTrails = (filteredTrails, userInput) => {
-  //   console.log(filteredTrails, userInput);
-  // };
+  const searchTrails = (filteredTrails) => {
+    setFilteredTrails(filteredTrails);
+    console.log(filteredTrails);
+  };
 
   return (
-    <Router>
+    <Router basename={"/trail-finder"}>
       <div className='App'>
         <Navbar />
         <Switch>
@@ -38,7 +41,7 @@ function App() {
             render={(props) => (
               <div className='mainContent'>
                 <div className='sidebar'>
-                  <Search trails={trails} />
+                  <Search trails={trails} searchTrails={searchTrails} />
                   <Trails trails={trails} />
                 </div>
                 <Map trails={trails} />

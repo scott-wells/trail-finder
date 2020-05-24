@@ -1,6 +1,7 @@
 {
   "name": "trail-finder",
   "version": "0.1.0",
+  "homepage": "https://scott-wells/trail-finder",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -12,7 +13,8 @@
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.5",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "yarn": "^1.22.4"
   },
   "scripts": {
     "start": "react-scripts start",

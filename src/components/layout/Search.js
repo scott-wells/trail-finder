@@ -6,17 +6,13 @@ class Search extends Component {
     userInput: "",
   };
 
-  // onSubmit = (e) => {
-  //   e.preventDefault();
-  //   const trails = this.props.trails;
-  //   const filteredTrails = this.state.filteredTrails;
-  //   // this.props.searchTrails(this.state.filteredTrails, this.state.userInput);
-  //   // this.setState({ userInput: "" });
-  //   const result = Object.values(trails).filter((value) => {
-  //     return value === filteredTrails;
-  //   });
-  //   console.log(result);
-  // };
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.searchTrails(this.state.filteredTrails);
+    this.setState({
+      userInput: "",
+    });
+  };
 
   // Gets trails from props
   // Sets userInput to input field value
@@ -30,8 +26,8 @@ class Search extends Component {
     );
     console.log(userInput);
     console.log(filteredTrails);
+    this.props.searchTrails(this.state.filteredTrails);
     this.setState({
-      filteredTrails,
       userInput,
     });
   };
